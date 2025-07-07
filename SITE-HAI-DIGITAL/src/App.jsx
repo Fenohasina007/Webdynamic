@@ -101,15 +101,31 @@ function App() {
       </div>
 
       {/* section2 : A propos */}
-      <div className=' text-white py-10 lg:px-[80px] px-5' style={{backgroundColor:'rgb(17, 113, 145)'}}>
-        <h1 className='text-[30px] font-semibold'>A propos</h1>
-          <p className='text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, accusantium enim a totam, laudantium assumenda deleniti sit voluptate magnam harum tempora ea facere quasi delectus facilis ducimus molestiae quas nam Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum laborum itaque nisi autem explicabo fugiat qui, veniam dolorem ullam minus? Voluptatem sunt corporis cum repellendus unde modi porro dicta ut!
-          Non illum molestiae sunt facilis in laboriosam unde quibusdam impedit voluptate culpa corporis dolore quidem ducimus provident quasi, nostrum quis natus architecto hic vero deleniti. Cum porro unde amet in?
-          Sapiente, ipsa? Architecto quam maiores nostrum libero, unde cum nisi, nulla vitae quaerat nesciunt atque. Non illum numquam tenetur nesciunt consequatur excepturi alias quis eum nam, quos porro omnis culpa.
-          Enim nihil ipsam at vero deleniti ut quam ipsa dolore possimus sunt? Accusantium minima tenetur molestias amet accusamus. Aliquid ratione mollitia necessitatibus veritatis perferendis rem fugit aliquam molestiae architecto totam.
-          Dolore saepe incidunt unde non libero tempora dolorum. Amet a atque temporibus. Rem incidunt repellendus quam fugiat. Labore velit eaque ut pariatur, ea deserunt. Neque sunt sapiente vel rerum minima?
-          Iste, nam suscipit veniam velit vero perspiciatis! Sint tempore voluptatem quisquam temporibus minus non pariatur libero nesciunt numquam, perspiciatis quis dolore aperiam modi nobis culpa, atque odit, ut suscipit praesentium.
-          </p>
+      <div className='lg:flex justify-around text-white pb-10 pt-[80px] lg:px-[50px] px-5' style={{backgroundColor:'rgb(17, 113, 145)'}}>
+          <div className='w-full lg:w-auto flex justify-center lg:block'>
+           <img src="/img/groupe.png" alt=""  className='lg:w-[330px] lg:h-[330px] w-[280px] lg:mb-[0px] mb-[10px] h-[280px] object-contain'/>
+          </div>
+          <div className='lg:w-[600px]'>
+            {/* style ligne roa */}
+              <div className='flex items-center'>
+                <h1 className='text-[30px] font-semibold'>A propos</h1>
+                <div className='ml-[9px] mt-[9px]'>
+                  <p className='w-[30px] h-1 rounded-full mb-1 bg-white'></p>
+                  <p className='w-[45px] h-1 rounded-full bg-white'></p>
+                </div>
+              </div>
+              <p className='mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, accusantium enim a totam, laudantium assumenda deleniti sit voluptate magnam harum tempora ea facere quasi delectus facilis ducimus molestiae quas nam Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum laborum itaque nisi autem explicabo fugiat qui, veniam dolorem ullam minus? Voluptatem sunt corporis cum repellendus unde modi porro dicta ut!
+              Iste, nam suscipit veniam velit vero perspiciatis! Sint tempore voluptatem quisquam temporibus minus non pariatur libero nesciunt numquam, perspiciatis quis dolore aperiam modi nobis culpa, atque odit, ut suscipit praesentium.
+              </p>
+          </div>
+      </div>
+
+      {/* section3 : Service */}
+      <div className='text-center py-[40px]'>
+        <h1 className='text-[30px] font-semibold text-[#1282a7]'>Nos service</h1>
+        <p className=' text-[20px]'>Nous proposons des services pour la réalisation de vos <span className='font-bold'>projets numériques</span></p>
+        <p className=''>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est et ullam veniam velit eveniet reiciendis laboriosam nulla, fuga sunt omnis id quos, laborum quia ut? Odio voluptas error vero ipsa.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum explicabo. Quae, odio. Exercitationem saepe nesciunt eum ratione maxime incidunt. Aperiam, quas adipisci non fuga vitae soluta expedita quaerat sunt.</p>
       </div>
     </main>
   );
