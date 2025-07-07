@@ -10,7 +10,8 @@ export default function HeroSection() {
           Bienvenue à l'Association Géomaticiens Malagasy
         </Heading>
         <Text fontSize="xl" maxW="2xl">
-          Promouvoir la géomatique et les technologies innovantes à Madagascar. Découvrez nos formations, actualités et projets !
+          Promouvoir la géomatique et les technologies innovantes à Madagascar. Découvrez nos formations,
+          actualités et projets !Merci de nous rejoindre dans cette aventure passionnante.
         </Text>
         <Button colorScheme="primary" size="lg" as="a" href="#formations">
           Découvrir l'association
