@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 import { Contenu } from './contenu.entity';
 
 @Entity('personnalisations')
@@ -45,6 +45,7 @@ export class Personnalisation {
   @Column({ type: 'int', nullable: true })
   PaddingRight!: number;
 
-  @ManyToOne(() => Contenu, (contenu) => contenu.idContenu)
-  idContenu!: Contenu;
+  @ManyToOne(() => Contenu, contenu => contenu.personalisations)
+  @JoinColumn({ name: 'idContenu' })
+  contenu!: Contenu;
 }
