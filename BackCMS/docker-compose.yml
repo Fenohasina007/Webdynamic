@@ -1,0 +1,54 @@
+version: '3' # À supprimer si vous suivez l'avertissement
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=cms
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: . # Utilise le répertoire courant (F:\StageL3\cms\ProjetCMS)
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/usr/src/app
+    depends_on:
+      - postgres
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+      - DB_DATABASE=cms
+    command: npm run dev
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ../FrontCMS # Chemin relatif vers F:\StageL3\cms\FrontReactVite
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - '5174:5174'
+    volumes:
+      - ../FrontCMS:/usr/src/app
+    depends_on:
+      - backend
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

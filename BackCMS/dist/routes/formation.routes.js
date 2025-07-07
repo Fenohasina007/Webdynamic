@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const formation_controller_1 = require("../controllers/formation.controller");
+const router = (0, express_1.Router)();
+const formationController = new formation_controller_1.FormationController();
+router.get('/', (req, res) => formationController.getAllFormations(req, res));
+router.get('/:id', (req, res) => formationController.getFormationById(req, res));
+router.post('/', (req, res) => formationController.createFormation(req, res));
+router.put('/:id', (req, res) => formationController.updateFormation(req, res));
+router.delete('/:id', (req, res) => formationController.deleteFormation(req, res));
+exports.default = router;
