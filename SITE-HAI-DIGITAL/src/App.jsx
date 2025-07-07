@@ -124,6 +124,7 @@ function App() {
       <div className='text-center py-[40px]'>
         <h1 className='text-[30px] font-semibold text-[#1282a7]'>Nos service</h1>
         <p className='text-[20px]'>Nous proposons des services pour la réalisation de vos <span className='font-bold'>projets numériques</span></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est et ullam veniam velit eveniet reiciendis laboriosam nulla, fuga sunt omnis id quos, laborum quia ut? Odio voluptas error vero ipsa.</p>
       </div>
     </main>
   );
