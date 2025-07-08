@@ -73,7 +73,17 @@ export default function Home() {
             />
           </div>
         </div>
-        
+        <div className="mt-8 flex justify-start">
+          <Link
+            to="/about"
+            className="relative inline-block px-6 py-2 font-medium text-white bg-itdc rounded group transition-all duration-300"
+          >
+            <span
+              className="absolute inset-0 rounded outline outline-2 outline-bleuIt opacity-0 group-hover:opacity-100 group-hover:outline-offset-4 transition-all duration-300 ease-out pointer-events-none"
+            ></span>
+            <span className="relative z-10">En savoir plus</span>
+          </Link>
+        </div>
         
           
       </section>
