@@ -148,16 +148,15 @@ function App() {
               <p className=' text-[18px]'>Nous proposons des services pour la réalisation de vos <span className='font-bold'>projets numériques</span></p>
           </div>
             {/* card service  */}
-          <div className='mt-[80px] flex justify-center space-x-10'>
+          <div className='mt-[80px] lg:flex justify-center lg:space-x-10'>
             {services.map((service, index) => (
-            <div key={index} className='border-2 shadow-md rounded-[3px] w-[300px] px-5 py-8'>
+            <div key={index} className='border-2 lg:mt-0 mt-8 w-ful  cursor-pointer shadow-md rounded-[3px] lg:w-[300px] px-6 py-10 sm:px-10 lg:py-8'>
               <div className='flex justify-cente'>
                 <img src={service.image} alt="" className='w-[130px] mx-auto object-contain' />
               </div>
               <h1 className='font-bold mt-10'>{service.title}</h1>
               <p>{service.description}</p>
-              <button className='bg-[#1282a7] py-[2px] mt-5 px-7 text-white rounded-[3px]'>voir plus</button>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur labore culpa quae praesentium similique officia quisquam totam laboriosam pariatur repellendus laudantium, delectus numquam vel explicabo quidem excepturi maxime iusto! Consequuntur.</p>
+              <button className='bg-[#1282a7] w-full py-[5px] mt-3 px-7 text-white rounded-[3px]'>voir plus</button>
             </div>))}
           </div> 
       </div>
