@@ -34,7 +34,7 @@ export default function Header() {
           {navLinks.map((link, index) => (
             <li
               key={index}
-              className="text-[15px] font-bold cursor-pointer font-touche text-black/80 relative group"
+              className="text-[12px] font-bold cursor-pointer font-touche text-black/80 relative group"
             >
               <Link to={link.path} className="hover:text-bleuIt group">
                 {link.name}
@@ -62,41 +62,59 @@ export default function Header() {
         {/* Mobile menu button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-2xl text-bleuIt cursor-pointer focus:outline-none"
+          className="lg:hidden text-[20px] font-bold cursor-pointer font-touche text-black/80 relative group"
         >
           {isOpen ? <FiX /> : <FiMenu />}
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {isOpen && (
-        <ul className="lg:hidden flex flex-col items-start gap-3 mt-4 px-4 text-sm font-medium animate-slide-down origin-top cursor-pointer bg-white shadow-md rounded">
-          {navLinks.map((link, index) => (
-            <li
-              key={index}
-              className="text-[13px] tracking-widest text-black/80 cursor-pointer relative group"
-            >
-              <Link to={link.path} className="hover:text-itdc group">
-                {link.name}
-              </Link>
-              <div className="w-full h-[2px] bg-itdc opacity-60 mt-1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
-            </li>
-          ))}
-          <li className="flex gap-2 items-center">
-            <a
-              href="tel:+261345263787"
-              className="bg-bleuIt text-white px-4 py-2 rounded hover:bg-[#e79f53] flex items-center gap-2"
-            >
-              <IoMdCall /> Contactez-nous
-            </a>
-            <button>
-              <a href="#" className="text-3xl">
-                <IoIosSettings />
-              </a>
-            </button>
-          </li>
-        </ul>
-      )}
+  {/* Mobile menu (side panel) */}
+<div
+  className={`lg:hidden items-center justify-center fixed top-0 right-0 h-full w-1/2 bg-white shadow-md transform transition-transform duration-300 z-40 ${
+    isOpen ? 'translate-x-0' : 'translate-x-full'
+  }`}
+>
+  <div className="flex flex-col h-full p-6">
+    {/* Close button */}
+    <div className="flex justify-end mb-6">
+      <button
+        onClick={() => setIsOpen(false)}
+        className="text-2xl text-bleuIt focus:outline-none"
+        aria-label="Fermer le menu"
+      >
+        <FiX />
+      </button>
+    </div>
+
+    {/* Navigation Links */}
+    <ul className="flex items-center flex-col gap-5 text-sm font-medium">
+      {navLinks.map((link, index) => (
+        <li
+          key={index}
+          className="text-[14px] tracking-wide text-black/80 relative group"
+        >
+          <Link
+            to={link.path}
+            onClick={() => setIsOpen(false)} // ✅ Ferme le menu au clic
+            className="hover:text-bleuIt transition-colors duration-300 group"
+          >
+            {link.name}
+          </Link>
+          <div className="w-full h-[2px] bg-bleuIt opacity-60 mt-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+        </li>
+      ))}
+      <li className="flex gap-3 items-center">
+        
+        <button
+          className="text-xl text-white flex items-center bg-bleuIt cursor-pointer rounded hover:bg-itdc transition-all duration-200 px-4 py-2" 
+        >
+          <IoIosSettings /> Paramètres CMS
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+
     </header>
   );
 }
