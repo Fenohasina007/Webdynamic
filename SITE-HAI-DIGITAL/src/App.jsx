@@ -8,6 +8,27 @@ import { IoSettingsOutline } from "react-icons/io5";
 
 function App() {
   const items = ["Accueil", "A propos", "Contact", "Service", "Projet", "Formation"];
+  const services = [
+  {
+    title: "Développements",
+    image: "img/service.png",
+    description:
+      "Lorem ipsum dolor sit amet conenim hic totam illum nostrum esse alias.",
+  },
+  {
+    title: "Design graphique",
+    image: "img/service.png",
+    description:
+      "Création de visuels professionnels pour vos interfaces et supports numériques.",
+  },
+  {
+    title: "Consulting digital",
+    image: "img/service.png",
+    description:
+      "Accompagnement stratégique pour réussir votre transformation numérique.",
+  },
+];
+
   
   const [activeIndex, setActiveIndex] = useState(0);
   // responsive nav et delai
@@ -121,11 +142,23 @@ function App() {
       </div>
 
       {/* section3 : Service */}
-      <div className='text-center py-[40px]'>
-        <h1 className='text-[30px] font-semibold text-[#1282a7]'>Nos service</h1>
-        <p className=' text-[20px]'>Nous proposons des services pour la réalisation de vos <span className='font-bold'>projets numériques</span></p>
-        <p className=''>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est et ullam veniam velit eveniet reiciendis laboriosam nulla, fuga sunt omnis id quos, laborum quia ut? Odio voluptas error vero ipsa.</p>
-        <p>- 865567567565 dolor sit amet consectetur adipisicing elit. Et, illum explicabo. Quae, odio. Exercitationem saepe nesciunt eum ratione maxime incidunt. Aperiam, quas adipisci non fuga vitae soluta expedita quaerat sunt.</p>
+      <div className='py-[40px] px-10'>
+          <div className='text-center'>
+              <h1 className='text-[30px] font-semibold text-[#1282a7]'>Nos service</h1>
+              <p className=' text-[18px]'>Nous proposons des services pour la réalisation de vos <span className='font-bold'>projets numériques</span></p>
+          </div>
+            {/* card service  */}
+          <div className='mt-[80px] flex justify-center space-x-10'>
+            {services.map((service, index) => (
+            <div key={index} className='border-2 shadow-md rounded-[3px] w-[300px] px-5 py-8'>
+              <div className='flex justify-cente'>
+                <img src={service.image} alt="" className='w-[130px] mx-auto object-contain' />
+              </div>
+              <h1 className='font-bold mt-10'>{service.title}</h1>
+              <p>{service.description}</p>
+              <button className='bg-[#1282a7] py-[2px] mt-5 px-7 text-white rounded-[3px]'>voir plus</button>
+            </div>))}
+          </div> 
       </div>
     </main>
   );
