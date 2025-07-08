@@ -51,7 +51,7 @@ function App() {
             <li>
               <a href="tel:+261345263787" className="bg-bleuIt text-white flex items-center gap-2 px-4 py-2 rounded 
              hover:bg-itdc  transition-all duration-200">
-              <IoMdCall className="text-xl" />  Contactez-nous 
+              <IoMdCall className="text-xl" />  Contactez-nous !
               </a> 
             </li>
             <li>
