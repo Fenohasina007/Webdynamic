@@ -5,6 +5,7 @@ import { IoMenu } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa6";
 import { GrLinkNext } from "react-icons/gr";
 import { IoSettingsOutline } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 
 function App() {
   const items = ["Accueil", "A propos", "Contact", "Service", "Projet", "Formation"];
@@ -93,8 +94,8 @@ function App() {
         {/* </div>
         <div> */}
           <button className='border-white rounded-[3px] text-[white] py-1 px-5 bg-[#1282a7] flex items-center'><FaFacebook className='mr-[10px]' /> Facebook</button>
-          <h1 onClick={() => setClicked(!clicked)} className='text-[30px] grid lg:hidden cursor-pointer'><IoMenu /></h1>
           <h1 className='text-[25px] cursor-pointer'><IoSettingsOutline /></h1>
+          <h1 onClick={() => setClicked(!clicked)} className='text-[30px] grid lg:hidden cursor-pointer'>{clicked ? <IoClose /> : <IoMenu />}</h1>
         </div>
       </nav>
             {/* nav responsive  */}
