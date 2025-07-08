@@ -8,6 +8,7 @@ import personnalisationRoutes from './routes/personnalisation.routes';
 import compteRoutes from './routes/compte.routes';
 import formationRoutes from './routes/formation.routes'
 import siteDataRout from './routes/siteData.routes';
+import pageRoutes from './routes/page.routes';
 
 const app: Application = express();
 
@@ -26,6 +27,7 @@ app.use('/api', personnalisationRoutes);
 app.use('/api', compteRoutes);
 app.use('/api', formationRoutes);
 app.use('/api', siteDataRout);
+app.use('/apo', pageRoutes)
 
 
 // Route de test pour vérifier la connexion
