@@ -10,6 +10,9 @@ export class Composante {
   @Column({ type: 'varchar', length: 100, nullable: false })
   NomComposante!: string;
 
+  @Column({ type: 'varchar', length: 100, nullable: false })
+  NomPage!: string;
+
   @OneToMany(() => Contenu, contenu => contenu.composant)
   contenus!: Contenu[];
 
