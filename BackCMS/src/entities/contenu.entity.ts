@@ -16,10 +16,10 @@ export class Contenu {
   @Column({ type: 'text', nullable: true })
   ContenuJSON!: string;
 
-  @OneToMany(() => Personnalisation, personnalisation => personnalisation.contenu)
+  @OneToMany(() => Personnalisation, personnalisation => personnalisation.idContenu)
   personalisations!: Personnalisation[];
 
   @ManyToOne(() => Composante, composante => composante.contenus)
   @JoinColumn({ name: 'idComposante' })
-  composant!: Composante;
+  idComposante!: Composante;
 }

@@ -47,5 +47,5 @@ export class Personnalisation {
 
   @ManyToOne(() => Contenu, contenu => contenu.personalisations)
   @JoinColumn({ name: 'idContenu' })
-  contenu!: Contenu;
+  idContenu!: Contenu;
 }

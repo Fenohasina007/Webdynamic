@@ -12,7 +12,7 @@ export class PersonnalisationController {
       } = req.body;
       const personnalisation = await personnalisationService.addPersonnalisation({
         Size, Weight, TextFamily, Couleur, Background, MarginTop, MarginBottom,
-        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight
+        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight, idContenu
       });
       res.status(201).json(personnalisation);
     } catch (error) {
@@ -71,11 +71,11 @@ export class PersonnalisationController {
       const id = parseInt(req.params.id);
       const {
         Size, Weight, TextFamily, Couleur, Background, MarginTop, MarginBottom,
-        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight, idContenu
+        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight, idContenu  
       } = req.body;
       const personnalisation = await personnalisationService.updatePersonnalisation(id, {
         Size, Weight, TextFamily, Couleur, Background, MarginTop, MarginBottom,
-        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight
+        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight, idContenu
       });
       if (personnalisation) {
         res.status(200).json(personnalisation);

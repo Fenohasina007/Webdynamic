@@ -12,6 +12,6 @@ export class Site {
   @Column({ type: 'varchar', length: 100, nullable: false })
   Domaine!: string;
 
-  @OneToMany(() => Page, page => page.site)
+  @OneToMany(() => Page, page => page.idSite)
   pages!: Page[];
 }

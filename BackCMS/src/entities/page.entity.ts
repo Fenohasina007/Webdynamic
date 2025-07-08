@@ -10,10 +10,10 @@ export class Page {
   @Column()
   NomPage!: string;
 
-  @OneToMany(() => Composante, composante => composante.page)
+  @OneToMany(() => Composante, composante => composante.idPage)
   composantes!: Composante[];
 
   @ManyToOne(() => Site, site => site.pages)
   @JoinColumn({ name: 'idSite' })
-  site!: Site;
+  idSite!: Site;
 }

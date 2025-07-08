@@ -11,10 +11,10 @@ export class Composante {
   @Column({ type: 'varchar', length: 100, nullable: false })
   NomComposante!: string;
 
-  @OneToMany(() => Contenu, contenu => contenu.composant)
+  @OneToMany(() => Contenu, contenu => contenu.idComposante)
   contenus!: Contenu[];
 
   @ManyToOne(() => Page, page => page.composantes) // Ensure no conflict with ImportedComposante
   @JoinColumn({ name: 'idPage' })  // Cette colonne est la clé étrangère
-  page!: Page;
+  idPage!: Page;
 }
