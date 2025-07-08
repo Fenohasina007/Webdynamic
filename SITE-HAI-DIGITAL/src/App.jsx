@@ -125,7 +125,7 @@ function App() {
         <h1 className='text-[30px] font-semibold text-[#1282a7]'>Nos service</h1>
         <p className=' text-[20px]'>Nous proposons des services pour la réalisation de vos <span className='font-bold'>projets numériques</span></p>
         <p className=''>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est et ullam veniam velit eveniet reiciendis laboriosam nulla, fuga sunt omnis id quos, laborum quia ut? Odio voluptas error vero ipsa.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, illum explicabo. Quae, odio. Exercitationem saepe nesciunt eum ratione maxime incidunt. Aperiam, quas adipisci non fuga vitae soluta expedita quaerat sunt.</p>
+        <p>- 865567567565 dolor sit amet consectetur adipisicing elit. Et, illum explicabo. Quae, odio. Exercitationem saepe nesciunt eum ratione maxime incidunt. Aperiam, quas adipisci non fuga vitae soluta expedita quaerat sunt.</p>
       </div>
     </main>
   );
