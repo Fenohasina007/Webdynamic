@@ -10,7 +10,8 @@ const Links = [
   { name: "formation", to: "/formations" },
   { name: "actualites", to: "/actualites" },
   { name: "membres", to: "/membres" },
-  { name: "service", to: "/services" }
+  { name: "service", to: "/services" },
+  {name : "contact", to: "/contact" }
 ];
 
 const NavLink = ({ to, children, onClick }) => (
