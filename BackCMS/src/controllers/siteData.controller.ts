@@ -6,8 +6,8 @@ const siteDataService = new SiteDataService();
 export class SiteDataController {
   async getSiteDataByName(req: Request, res: Response): Promise<void> {
     try {
-      const nomSite = req.params.nomSite;
-      const nomPage = req.params.nomPage; // Récupéré depuis l'URL, optionnel
+      const nomSite = req.params.nomSite; // Obligatoire via URL
+      const nomPage = req.query.nomPage as string | undefined; // Optionnel via query string
       if (!nomSite) {
         res.status(400).json({ message: 'Le nom du site est requis' });
         return;
