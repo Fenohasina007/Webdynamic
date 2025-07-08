@@ -157,6 +157,7 @@ function App() {
               <h1 className='font-bold mt-10'>{service.title}</h1>
               <p>{service.description}</p>
               <button className='bg-[#1282a7] py-[2px] mt-5 px-7 text-white rounded-[3px]'>voir plus</button>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur labore culpa quae praesentium similique officia quisquam totam laboriosam pariatur repellendus laudantium, delectus numquam vel explicabo quidem excepturi maxime iusto! Consequuntur.</p>
             </div>))}
           </div> 
       </div>

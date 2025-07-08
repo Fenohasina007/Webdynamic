@@ -12,7 +12,7 @@ export class PersonnalisationController {
       } = req.body;
       const personnalisation = await personnalisationService.addPersonnalisation({
         Size, Weight, TextFamily, Couleur, Background, MarginTop, MarginBottom,
-        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight, idContenu
+        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight
       });
       res.status(201).json(personnalisation);
     } catch (error) {
@@ -75,7 +75,7 @@ export class PersonnalisationController {
       } = req.body;
       const personnalisation = await personnalisationService.updatePersonnalisation(id, {
         Size, Weight, TextFamily, Couleur, Background, MarginTop, MarginBottom,
-        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight, idContenu
+        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight
       });
       if (personnalisation) {
         res.status(200).json(personnalisation);
