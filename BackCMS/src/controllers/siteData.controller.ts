@@ -7,7 +7,11 @@ export class SiteDataController {
   async getSiteDataByName(req: Request, res: Response): Promise<void> {
     try {
       const nomSite = req.params.nomSite;
-      const nomPage = req.query.nomPage as string | undefined; // Paramètre optionnel via query string
+      const nomPage = req.params.nomPage; // Récupéré depuis l'URL, optionnel
+      if (!nomSite) {
+        res.status(400).json({ message: 'Le nom du site est requis' });
+        return;
+      }
       const siteData = await siteDataService.getSiteDataByName(nomSite, nomPage);
       if (siteData) {
         res.status(200).json(siteData);
