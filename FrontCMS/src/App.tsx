@@ -4,63 +4,20 @@ import viteLogo from '/vite.svg';
 import axios from 'axios';
 import './App.css';
 
-// Define interfaces based on your entity structure
-interface Personnalisation {
-  idPersonnalisation: number;
-  Size: string;
-  Weight: string;
-  TextFamily: string;
-  Couleur: string;
-  Background: string;
-  MarginTop: number;
-  MarginBottom: number;
-  MarginLeft: number;
-  MarginRight: number;
-  PaddingTop: number;
-  PaddingBottom: number;
-  PaddingLeft: number;
-  PaddingRight: number;
-  idContenu: number;
-}
-
-interface Contenu {
-  idContenu: number;
-  Type: string;
-  Ordre: string;
-  ContenuJSON: string;
-  idComposante: number;
-  personnalisations: Personnalisation[];
-}
-
-interface Composante {
-  idComposante: number;
-  NomComposante: string;
-  NomPage: string;
-  idSite: number;
-  contenus: Contenu[];
-}
-
-interface Site {
-  idSite: number;
-  NomSite: string;
-  Domaine: string;
-  composantes: Composante[];
-}
-
 function App() {
   const [count, setCount] = useState(0);
-  const [siteData, setSiteData] = useState<Site | { message: string } | null>(null); // Typed with union type
+  const [message, setMessage] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/site-data/ITDC/Accueil')
+    axios.get('http://localhost:3000/test-connection')
       .then(response => {
-        setSiteData(response.data);
+        setMessage(response.data.message);
         setLoading(false);
       })
       .catch(error => {
         console.error('Erreur lors de la connexion:', error);
-        setSiteData({ message: 'Erreur lors de la connexion au backend.' });
+        setMessage('Erreur lors de la connexion au backend.');
         setLoading(false);
       });
   }, []);
@@ -90,25 +47,8 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <div>
-        <h2>Données du Site</h2>
-        {siteData && 'message' in siteData ? (
-          <p>{siteData.message}</p>
-        ) : siteData ? (
-          <div>
-            <h3>Site: {siteData.NomSite}</h3>
-            {siteData.composantes.map((composante) => (
-              <div key={composante.idComposante}>
-                <p>Nom: {composante.NomComposante} (Page: {composante.NomPage})</p>
-                {composante.contenus.map((contenu) => (
-                  <div key={contenu.idContenu}>
-                    <p>Type: {contenu.Type}</p>
-                    <p>Contenu: {JSON.stringify(contenu.ContenuJSON)}</p>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        ) : null}
+        <h2>Test de Connexion</h2>
+        <p>{message}</p>
       </div>
     </>
   );
