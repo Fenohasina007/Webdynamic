@@ -33,6 +33,6 @@ export class PageService {
   }
 
   async deleteAllPages(): Promise<void> {
-    await this.pageRepository.clear();
+    await this.pageRepository.query('TRUNCATE TABLE "pages" CASCADE');
   }
 }

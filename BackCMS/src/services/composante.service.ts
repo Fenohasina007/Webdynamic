@@ -28,7 +28,7 @@ export class ComposanteService {
   }
 
   async deleteAllComposantes(): Promise<void> {
-    await this.composanteRepository.clear();
+    await this.composanteRepository.query('TRUNCATE TABLE "composantes" CASCADE');
   }
 
   async updateComposante(id: number, composanteData: Partial<Composante>): Promise<Composante | null> {
