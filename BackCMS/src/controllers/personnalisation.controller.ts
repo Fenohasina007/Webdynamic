@@ -7,12 +7,12 @@ export class PersonnalisationController {
   async addPersonnalisation(req: Request, res: Response): Promise<void> {
     try {
       const {
-        Size, Weight, TextFamily, Couleur, Background, MarginTop, MarginBottom,
-        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight, idContenu
+        fontSize, fontWeight, fontFamily, color, backgroundColor, marginTop, marginBottom,
+        marginLeft, marginRight, paddingTop, paddingBottom, paddingLeft, paddingRight, idContenu
       } = req.body;
       const personnalisation = await personnalisationService.addPersonnalisation({
-        Size, Weight, TextFamily, Couleur, Background, MarginTop, MarginBottom,
-        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight, idContenu
+        fontSize, fontWeight, fontFamily, color, backgroundColor, marginTop, marginBottom,
+        marginLeft, marginRight, paddingTop, paddingBottom, paddingLeft, paddingRight, idContenu
       });
       res.status(201).json(personnalisation);
     } catch (error) {
@@ -70,12 +70,12 @@ export class PersonnalisationController {
     try {
       const id = parseInt(req.params.id);
       const {
-        Size, Weight, TextFamily, Couleur, Background, MarginTop, MarginBottom,
-        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight, idContenu  
+        fontSize, fontWeight, fontFamily, color, backgroundColor, marginTop, marginBottom,
+        marginLeft, marginRight, paddingTop, paddingBottom, paddingLeft, paddingRight, idContenu 
       } = req.body;
       const personnalisation = await personnalisationService.updatePersonnalisation(id, {
-        Size, Weight, TextFamily, Couleur, Background, MarginTop, MarginBottom,
-        MarginLeft, MarginRight, PaddingTop, PaddingBottom, PaddingLeft, PaddingRight, idContenu
+        fontSize, fontWeight, fontFamily, color, backgroundColor, marginTop, marginBottom,
+        marginLeft, marginRight, paddingTop, paddingBottom, paddingLeft, paddingRight, idContenu
       });
       if (personnalisation) {
         res.status(200).json(personnalisation);
