@@ -7,43 +7,43 @@ export class Personnalisation {
   idPersonnalisation!: number;
 
   @Column({ type: 'int', nullable: true })
-  Size!: number;
+  fontSize!: number;
 
   @Column({ type: 'int', nullable: true })
-  Weight!: number;
+  fontWeight!: number;
 
   @Column({ type: 'varchar', length: 50, nullable: true })
-  TextFamily!: string;
+  fontFamily!: string;
 
   @Column({ type: 'varchar', length: 20, nullable: true })
-  Couleur!: string;
+  color!: string;
 
   @Column({ type: 'varchar', length: 50, nullable: true })
-  Background!: string;
+  backgroundColor!: string;
 
   @Column({ type: 'int', nullable: true })
-  MarginTop!: number;
+  marginTop!: number;
 
   @Column({ type: 'int', nullable: true })
-  MarginBottom!: number;
+  marginBottom!: number;
 
   @Column({ type: 'int', nullable: true })
-  MarginLeft!: number;
+  marginLeft!: number;
 
   @Column({ type: 'int', nullable: true })
-  MarginRight!: number;
+  marginRight!: number;
 
   @Column({ type: 'int', nullable: true })
-  PaddingTop!: number;
+  paddingTop!: number;
 
   @Column({ type: 'int', nullable: true })
-  PaddingBottom!: number;
+  paddingBottom!: number;
 
   @Column({ type: 'int', nullable: true })
-  PaddingLeft!: number;
+  paddingLeft!: number;
 
   @Column({ type: 'int', nullable: true })
-  PaddingRight!: number;
+  paddingRight!: number;
 
   @ManyToOne(() => Contenu, contenu => contenu.personalisations)
   @JoinColumn({ name: 'idContenu' })

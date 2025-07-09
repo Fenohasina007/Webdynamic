@@ -15,11 +15,11 @@ export class ComposanteService {
   }
 
   async selectAllComposantes(): Promise<Composante[]> {
-    return await this.composanteRepository.find({ relations: ['idSite'] });
+    return await this.composanteRepository.find({ relations: ['idPage'] });
   }
 
   async selectComposanteById(id: number): Promise<Composante | null> {
-    return await this.composanteRepository.findOne({ where: { idComposante: id }, relations: ['idSite'] });
+    return await this.composanteRepository.findOne({ where: { idComposante: id }, relations: ['idPage'] });
   }
 
   async deleteComposanteById(id: number): Promise<boolean> {
@@ -33,6 +33,6 @@ export class ComposanteService {
 
   async updateComposante(id: number, composanteData: Partial<Composante>): Promise<Composante | null> {
     await this.composanteRepository.update(id, composanteData);
-    return await this.composanteRepository.findOne({ where: { idComposante: id }, relations: ['idSite'] });
+    return await this.composanteRepository.findOne({ where: { idComposante: id }, relations: ['idPage'] });
   }
 }
