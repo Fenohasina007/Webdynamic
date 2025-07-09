@@ -6,9 +6,12 @@ import { FaFacebook } from "react-icons/fa6";
 import { GrLinkNext } from "react-icons/gr";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
+import { FaLocationDot } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { IoCall } from "react-icons/io5";
 
 function App() {
-  const items = ["Accueil", "A propos", "Contact", "Service", "Projet", "Formation"];
+  const items = ["Accueil", "A propos", "Service", "Projet", "Formation"];
   const services = [
   {
     title: "Développements",
@@ -80,7 +83,7 @@ function App() {
         <div>
           <img src="/img/Logo.png" alt="" className='w-[100px]'/>
         </div>
-        <div className='flex items-center space-x-3 lg:space-x-6'>
+        <div className='flex items-center space-x-3 lg:space-x-8'>
             <ul className='lg:flex space-x-5 hidden'>
                 {items.map((item, index) => (
                   <li key={index} onClick={() => setActiveIndex(index)} className='overflow-hidden h-[1.5em] group'>
@@ -200,6 +203,51 @@ function App() {
               <p className='mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, accusantium enim a totam, laudantium assumenda deleniti sit voluptate magnam harum tempora ea facere quasi delectus facilis ducimus molestiae quas nam Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum laborum itaque nisi autem explicabo fugiat qui, veniam dolorem ullam minus? Voluptatem sunt corporis cum repellendus unde modi porro dicta ut!
               Iste, nam suscipit veniam velit vero perspiciatis! Sint tempore voluptatem quisquam temporibus minus non pariatur libero nesciunt numquam, perspiciatis quis dolore aperiam modi nobis culpa, atque odit, ut suscipit praesentium.
               </p>
+          </div>
+      </div>
+
+      {/* section6 : footeur */}
+      <div className='pt-[50px] text-white px-[80px] text-md' style={{backgroundColor:'rgb(17, 113, 145)'}}>
+          <div className='flex justify-between border-b-[1px] pb-7 cursor-pointer'>
+                      
+            <div className="flex flex-col w-[350px] text-white items-start gap-2">
+              <img src="/img/Logo.png" alt="Logo HAI DIGITAL" className="w-[80px] h-[80px] object-contain bg-white p-1 rounded-full" />
+              <p className="text-sm mt-3"><span className='text-[25px] font-semibold'>HAI DIGITAL --</span><br/> l’intelligence numérique au service d’un avenir durable, s’engage à créer des solutions innovantes qui allient technologie et responsabilité. </p>
+            </div>
+
+
+            <div className="text-white space-y-[8px]">
+              <h1 className='text-[25px] mb-5 font-semibold'>Information legal</h1>
+              <p>Mentions légales</p>
+              <p>Politique de confidentialité</p>
+              <p>Conditions générales</p>
+              <p>Engagés pour la protection de vos données.</p>
+            </div>
+
+            <div className='text-white'>
+                <h1 className='text-[25px] mb-5 font-semibold'>Contact</h1>
+                <ul className='footer'>
+                    <li className='flex items-center'><FaLocationDot className='mr-3' />Soatsiadino Fianarantsoa</li>
+                    <li className='flex items-center'><MdEmail className='mr-3'  />hai.digital.fianar@gmail.com</li>
+                    <li className='flex items-center'><FaFacebook className='mr-3'/>Hai Digital</li>
+                    <li className='flex items-center'><IoCall className='mr-3'/>034 76 171 72</li>
+                </ul>
+            </div> 
+          </div>
+
+          <div className='flex justify-between px-3 py-5'>
+             <p>© 2025 HAI DIGITAL — Tous droits réservés</p>
+
+              <ul className='lg:flex space-x-3 hidden'>
+                {items.map((item, index) => (
+                  <li key={index} onClick={() => setActiveIndex(index)} className='overflow-hidden h-[1.5em] group'>
+                    <div className={`transition-transform duration-700 ease-in-out ${activeIndex === index ? '-translate-y-[1.5em]' : 'group-hover:-translate-y-[1.5em]'}`}>
+                      <p className='h-[1.5em] flex items-center justify-center py-3 px-4'>{item}</p>
+                      <p className='h-[1.5em] text-[#1282a7] flex items-center justify-center bg-white rounded-[2px] py-3 px-4'>{item}</p>
+                    </div>
+                  </li>
+                ))}
+            </ul>
           </div>
       </div>
     </main>
