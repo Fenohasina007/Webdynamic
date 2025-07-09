@@ -27,7 +27,7 @@ app.use('/api', personnalisationRoutes);
 app.use('/api', compteRoutes);
 app.use('/api', formationRoutes);
 app.use('/api', siteDataRout);
-app.use('/apo', pageRoutes)
+app.use('/api', pageRoutes)
 
 
 // Route de test pour vérifier la connexion
