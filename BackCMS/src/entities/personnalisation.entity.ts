@@ -45,7 +45,7 @@ export class Personnalisation {
   @Column({ type: 'int', nullable: true })
   paddingRight!: number;
 
-  @ManyToOne(() => Contenu, contenu => contenu.personalisations)
+  @ManyToOne(() => Contenu, contenu => contenu.personnalisations)
   @JoinColumn({ name: 'idContenu' })
   idContenu!: Contenu;
 }

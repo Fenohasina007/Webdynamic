@@ -17,7 +17,7 @@ export class Contenu {
   ContenuJSON!: string;
 
   @OneToMany(() => Personnalisation, personnalisation => personnalisation.idContenu)
-  personalisations!: Personnalisation[];
+  personnalisations!: Personnalisation[];
 
   @ManyToOne(() => Composante, composante => composante.contenus)
   @JoinColumn({ name: 'idComposante' })
