@@ -6,8 +6,8 @@ const pageService = new PageService();
 export class PageController {
   async addPage(req: Request, res: Response): Promise<void> {
     try {
-      const pageData = req.body;
-      const newPage = await pageService.addPage(pageData);
+      const { NomPage, idSite} = req.body;
+      const newPage = await pageService.addPage({ NomPage, idSite});
       res.status(201).json(newPage);
     } catch (error) {
       res.status(500).json({ message: 'Erreur lors de l\'ajout de la page', error });
@@ -40,8 +40,8 @@ export class PageController {
   async updatePage(req: Request, res: Response): Promise<void> {
     try {
       const id = parseInt(req.params.id);
-      const pageData = req.body;
-      const updatedPage = await pageService.updatePage(id, pageData);
+      const { NomPage, idSite} = req.body;
+      const updatedPage = await pageService.updatePage(id, { NomPage, idSite});
       if (updatedPage) {
         res.status(200).json(updatedPage);
       } else {
