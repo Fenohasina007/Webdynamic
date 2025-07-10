@@ -1,16 +1,6 @@
-<<<<<<< HEAD
-# Unifie et corrige pour toutes les branches
-=======
-# Ignore node_modules and other common files
->>>>>>> develop
 node_modules/
-/node_modules
-**/node_modules
 .cache/
 .env
 .DS_Store
 *.log
-<<<<<<< HEAD
-# ...autres fichiers/dossiers à ignorer...
-=======
->>>>>>> develop
+.gitignore/
