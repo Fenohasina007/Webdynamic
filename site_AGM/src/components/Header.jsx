@@ -39,7 +39,7 @@ export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Flex justify="center" align="center" position="fixed" top={0} left={0} w="100%" zIndex={1200} bg="transparent">
+    <Flex justify="center" align="center" w="100%" zIndex={1200} bg="transparent">
       <Box
         bg="#3dbbeb"
         borderRadius={{ base: 'md', md: 'full' }}
