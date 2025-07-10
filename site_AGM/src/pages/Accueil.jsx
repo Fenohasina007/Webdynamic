@@ -11,6 +11,7 @@ export default function Accueil() {
       <HorizontalScroller />
       <Container maxW="6xl" py={10}>
         <Stack spacing={10}>
+<<<<<<< HEAD
           <Box as="section" id="equipe" display={{ base: 'block', md: 'flex' }} alignItems="center" justifyContent="center" gap={{ base: 8, md: 16, lg: 24 }}>
             <Box flex="1" display="flex" flexDirection="column" justifyContent="center" alignItems="center" pr={{ base: 0, md: 8, lg: 12 }}>
               <EquipeSection hideTitleAndText={true} />
@@ -24,6 +25,11 @@ export default function Accueil() {
                 Nous réunissons des passionnés, étudiants, enseignants et experts pour partager les connaissances et développer des outils adaptés aux besoins locaux.
               </Box>
             </Box>
+=======
+          <Box as="section" id="equipe">
+            <Heading as="h2" size="lg" mb={6} color="primary.700" textAlign="center">qsfdsfqdsf</Heading>
+            <EquipeSection />
+>>>>>>> 08f1b56036f2570536bf4aa85c3406132ac25d8d
           </Box>
           
         </Stack>

@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 import { Composante } from './composante.entity';
+import { Personnalisation } from './personnalisation.entity';
 
 @Entity('contenus')
 export class Contenu {
@@ -15,6 +16,10 @@ export class Contenu {
   @Column({ type: 'text', nullable: true })
   ContenuJSON!: string;
 
-  @ManyToOne(() => Composante, (composante) => composante.idComposante)
+  @OneToMany(() => Personnalisation, personnalisation => personnalisation.idContenu)
+  personnalisations!: Personnalisation[];
+
+  @ManyToOne(() => Composante, composante => composante.contenus)
+  @JoinColumn({ name: 'idComposante' })
   idComposante!: Composante;
 }

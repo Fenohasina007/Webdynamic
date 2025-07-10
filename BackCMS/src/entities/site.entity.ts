@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Page } from './page.entity';
 
 @Entity('sites')
 export class Site {
@@ -10,4 +11,7 @@ export class Site {
 
   @Column({ type: 'varchar', length: 100, nullable: false })
   Domaine!: string;
+
+  @OneToMany(() => Page, page => page.idSite)
+  pages!: Page[];
 }

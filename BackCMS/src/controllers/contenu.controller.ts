@@ -7,7 +7,7 @@ export class ContenuController {
   async addContenu(req: Request, res: Response): Promise<void> {
     try {
       const { Type, Ordre, ContenuJSON, idComposante } = req.body;
-      const contenu = await contenuService.addContenu({ Type, Ordre, ContenuJSON, idComposante });
+      const contenu = await contenuService.addContenu({ Type, Ordre, ContenuJSON, idComposante});
       res.status(201).json(contenu);
     } catch (error) {
       res.status(500).json({ message: 'Erreur lors de l\'ajout du contenu', error });
@@ -64,7 +64,7 @@ export class ContenuController {
     try {
       const id = parseInt(req.params.id);
       const { Type, Ordre, ContenuJSON, idComposante } = req.body;
-      const contenu = await contenuService.updateContenu(id, { Type, Ordre, ContenuJSON, idComposante });
+      const contenu = await contenuService.updateContenu(id, { Type, Ordre, ContenuJSON, idComposante});
       if (contenu) {
         res.status(200).json(contenu);
       } else {

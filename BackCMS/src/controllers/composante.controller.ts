@@ -6,8 +6,8 @@ const composanteService = new ComposanteService();
 export class ComposanteController {
   async addComposante(req: Request, res: Response): Promise<void> {
     try {
-      const { NomComposante, idSite } = req.body;
-      const composante = await composanteService.addComposante({ NomComposante, idSite });
+      const { NomComposante, idPage} = req.body;
+      const composante = await composanteService.addComposante({ NomComposante, idPage});
       res.status(201).json(composante);
     } catch (error) {
       res.status(500).json({ message: 'Erreur lors de l\'ajout de la composante', error });
@@ -63,8 +63,8 @@ export class ComposanteController {
   async updateComposante(req: Request, res: Response): Promise<void> {
     try {
       const id = parseInt(req.params.id);
-      const { NomComposante, idSite } = req.body;
-      const composante = await composanteService.updateComposante(id, { NomComposante, idSite });
+      const { NomComposante, idPage} = req.body;
+      const composante = await composanteService.updateComposante(id, { NomComposante, idPage});
       if (composante) {
         res.status(200).json(composante);
       } else {
