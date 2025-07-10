@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Flex, HStack, Link, IconButton, useDisclosure, Image } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link as RouterLink } from "react-router-dom";
+import agmImage from '../assets/images/AGM.jpg';
 
 const Links = [
   { name: "accueil", to: "/" },
@@ -9,14 +10,14 @@ const Links = [
   { name: "formation", to: "/formations" },
   { name: "actualites", to: "/actualites" },
   { name: "membres", to: "/membres" },
-  { name: "service", to: "/services" }
+  { name: "service", to: "/services" },
 ];
 
-const NavLink = ({ to, children, onClick }) => (
+const NavLink = ({ to, children, onClick, color = "white" }) => (
   <Link
     as={RouterLink}
     to={to}
-    color="white"
+    color={color}
     fontWeight="bold"
     fontSize="sm"
     textTransform="lowercase"
@@ -38,26 +39,37 @@ export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Flex justify="center" align="center" position="sticky" top={0} left={0} w="100vw" zIndex={1200} bg="transparent">
+    <Flex justify="center" align="center" position="fixed" top={0} left={0} w="100%" zIndex={1200} bg="transparent">
       <Box
         bg="#3dbbeb"
-        borderRadius="full"
-        px={{ base: 1, sm: 2, md: 6, lg: 10, xl: 14 }}
-        py={{ base: 1, md: 1 }}
+        borderRadius={{ base: 'md', md: 'full' }}
+        px={2}
+        py={1}
         display="flex"
         alignItems="center"
         justifyContent="space-between"
         boxShadow="lg"
-        width={{ base: "100vw", md: "100vw" }}
-        maxW={{ base: '100vw', md: '100vw', xl: '1000px' }}
+        width="100%"
+        maxW={{ base: '100vw', md: '700px', xl: '900px' }}
         minW={0}
         position="relative"
+        mx="auto"
+        transition="all 0.3s"
       >
-        {/* Logo AGM à gauche dans la navbar */}
-        <Box mr={2} minW="36px" display="flex" alignItems="center">
-          <Image src={require("../assets/images/AGM.jpg")} alt="AGM" boxSize={{ base: "32px", sm: "36px", md: "40px" }} borderRadius="full" />
+        <Box mr={2} minW="36px" display={{ base: isOpen ? "none" : "flex", md: "flex" }} alignItems="center">
+          <Image
+            src={agmImage}
+            alt="AGM"
+            boxSize={{ base: "32px", md: "40px", lg: "48px" }}
+            borderRadius="full"
+            display="block"
+          />
         </Box>
-        {/* Menu hamburger mobile */}
+        {/* Espace réservé pour garder la place du logo quand il est caché en mobile */}
+        {isOpen && (
+          <Box mr={2} minW="36px" display={{ base: "flex", md: "none" }} />
+        )}
+        {/* Bouton menu hamburger toujours visible sur mobile */}
         <IconButton
           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
           aria-label="Ouvrir le menu"
@@ -70,37 +82,58 @@ export default function Header() {
         />
         {/* Liens desktop centrés à droite du logo */}
         <HStack spacing={0} display={{ base: "none", md: "flex" }} justify="center" align="center" w="100%">
-          <NavLink to={Links[0].to}>{Links[0].name}</NavLink>
-          <Box color="white" fontWeight="bold" px={2}>|</Box>
-          <NavLink to={Links[1].to} whiteSpace="nowrap">{Links[1].name}</NavLink>
-          <Box color="white" fontWeight="bold" px={2}>|</Box>
-          <NavLink to={Links[2].to}>{Links[2].name}</NavLink>
-          <Box color="white" fontWeight="bold" px={2}>|</Box>
-          <NavLink to={Links[3].to}>{Links[3].name}</NavLink>
-          <Box color="white" fontWeight="bold" px={2}>|</Box>
-          <NavLink to={Links[4].to}>{Links[4].name}</NavLink>
-          <Box color="white" fontWeight="bold" px={2}>|</Box>
-          <NavLink to={Links[5].to}>{Links[5].name}</NavLink>
+          {Links.map((link, idx) => (
+            <React.Fragment key={link.name}>
+              <NavLink to={link.to}>{link.name}</NavLink>
+              {idx < Links.length - 1 && (
+                <Box color="white" fontWeight="bold" px={2}>|</Box>
+              )}
+            </React.Fragment>
+          ))}
         </HStack>
         {/* Menu mobile overlay */}
         {isOpen && (
           <Box
             position="fixed"
-            top={0}
-            left={0}
-            width="100vw"
-            height="100vh"
-            bg="#3dbbeb"
+            top="70px"
+            left="50%"
+            transform="translateX(-50%)"
+            width="95vw"
+            maxW="400px"
+            height="auto"
+            bg="white"
             zIndex={100}
-            pt={24}
-            px={4}
+            pt={8}
+            pb={8}
+            px={6}
             display={{ base: "flex", md: "none" }}
             flexDirection="column"
             alignItems="center"
             justifyContent="flex-start"
+            borderRadius="xl"
+            boxShadow="2xl"
+            transition="all 0.3s"
           >
             {Links.map((link) => (
-              <NavLink key={link.name} to={link.to} onClick={onClose}>
+              <NavLink
+                key={link.name}
+                to={link.to}
+                onClick={onClose}
+                color="black"
+                style={{
+                  background: 'white',
+                  width: '100%',
+                  height: '50px',
+                  margin: '14px 0',
+                  borderRadius: '8px',
+                  padding: '16px 0',
+                  fontWeight: 700,
+                  fontSize: '1.25em',
+                  letterSpacing: '0.02em',
+                  textAlign: 'center',
+                  boxShadow: '0 1px 6px rgba(0,0,0,0.04)'
+                }}
+              >
                 {link.name}
               </NavLink>
             ))}
