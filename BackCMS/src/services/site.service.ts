@@ -28,7 +28,7 @@ export class SiteService {
   }
 
   async deleteAllSites(): Promise<void> {
-    await this.siteRepository.clear();
+    await this.siteRepository.query('TRUNCATE TABLE "sites" CASCADE');
   }
 
   async updateSite(id: number, siteData: Partial<Site>): Promise<Site | null> {

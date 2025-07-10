@@ -12,7 +12,7 @@ export default function Accueil() {
       <Container maxW="6xl" py={10}>
         <Stack spacing={10}>
           <Box as="section" id="equipe">
-            <Heading as="h2" size="lg" mb={6} color="primary.700" textAlign="center"></Heading>
+            <Heading as="h2" size="lg" mb={6} color="primary.700" textAlign="center">qsfdsfqdsf</Heading>
             <EquipeSection />
           </Box>
           

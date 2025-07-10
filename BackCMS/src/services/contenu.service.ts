@@ -28,7 +28,7 @@ export class ContenuService {
   }
 
   async deleteAllContenus(): Promise<void> {
-    await this.contenuRepository.clear();
+    await this.contenuRepository.query('TRUNCATE TABLE "contenus" CASCADE');
   }
 
   async updateContenu(id: number, contenuData: Partial<Contenu>): Promise<Contenu | null> {
