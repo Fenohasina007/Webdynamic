@@ -63,6 +63,7 @@ export default function Home() {
               </li>
             </ul>
           </div>
+          
 
           {/* Image */}
           <div className="flex-1">
@@ -73,6 +74,22 @@ export default function Home() {
             />
           </div>
         </div>
+        <div>
+        <div className='flex items-center justify-center'>
+        <div >
+      <h3 className="text-4xl font-bold text-bleuIt">15+</h3>
+      <p className="text-gray-700 text-sm mt-2">Années d'expérience</p>
+    </div>
+    <div>
+      <h3 className="text-4xl font-bold text-bleuIt">50+</h3>
+      <p className="text-gray-700 text-sm mt-2">Projets réalisés</p>
+    </div>
+    <div>
+      <h3 className="text-4xl font-bold text-bleuIt">12+</h3>
+      <p className="text-gray-700 text-sm mt-2">Partenaires</p>
+    </div>
+    </div>
+        </div>
         <div className="mt-8 flex justify-start">
           <Link
             to="/about"
@@ -81,12 +98,90 @@ export default function Home() {
             <span
               className="absolute inset-0 rounded outline outline-2 outline-bleuIt opacity-0 group-hover:opacity-100 group-hover:outline-offset-4 transition-all duration-300 ease-out pointer-events-none"
             ></span>
-            <span className="relative z-10">En savoir plus</span>
+            <span className="relative z-10">En savoir plus </span>
           </Link>
         </div>
         
           
       </section>
+
+      <section id="Services" className="bg-white pt-20 pb-10 px-4 sm:px-8 md:px-16 lg:px-20">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase text-bleuIt mb-8 text-left">
+          LES SERVICES  <br /> <span className="text-itdc">QUE NOUS PROPOSONS</span>
+        </h2>
+
+        
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-2">
+  {/* Bloc 1 */}
+  <div className="bg-grisFond p-6 rounded-xl shadow hover:shadow-lg transition-shadow">
+    <h3 className="text-xl font-semibold text-bleuIt mb-2">Développement d'Applications</h3>
+    <p className="text-gray-700 mb-4">
+      Création de solutions logicielles sur mesure pour optimiser vos processus et améliorer votre interaction client.
+    </p>
+    <ul className="text-sm space-y-2 text-gray-600">
+      <li className='flex items-center'><FaCheckCircle className="text-bleuIt mr-3 mt-1" /> Solutions personnalisées</li>
+      <li className='flex items-center'><FaCheckCircle className="text-bleuIt mr-3 mt-1" /> Approche innovante</li>
+      <li className='flex items-center'><FaCheckCircle className="text-bleuIt mr-3 mt-1" /> Expertise locale et internationale</li>
+    </ul>
+  </div>
+
+  {/* Bloc 2 */}
+  <div className="bg-grisFond p-6 rounded-xl shadow hover:shadow-lg transition-shadow">
+    <h3 className="text-xl font-semibold text-bleuIt mb-2">Accompagnement Numérique</h3>
+    <p className="text-gray-700 mb-4">
+      Conseils et solutions pour intégrer efficacement les technologies numériques au cœur de votre activité.
+    </p>
+    <ul className="text-sm space-y-2 text-gray-600">
+      <li className='flex items-center'><FaCheckCircle className="text-bleuIt mr-3 mt-1" /> Solutions personnalisées</li>
+      <li className='flex items-center'><FaCheckCircle className="text-bleuIt mr-3 mt-1" /> Approche innovante</li>
+      <li className='flex items-center'><FaCheckCircle className="text-bleuIt mr-3 mt-1" /> Expertise locale et internationale</li>
+    </ul>
+  </div>
+
+  {/* Bloc 3 */}
+  <div className="bg-grisFond p-6 rounded-xl shadow hover:shadow-lg transition-shadow">
+    <h3 className="text-xl font-semibold text-bleuIt mb-2">Développement Environnemental</h3>
+    <p className="text-gray-700 mb-4">
+      Solutions informatiques dédiées à la gestion et à la valorisation des données environnementales.
+    </p>
+    <ul className="text-sm space-y-2 text-gray-600">
+      <li className='flex items-center'><FaCheckCircle className="text-bleuIt mr-3 mt-1" /> Solutions personnalisées</li>
+      <li className='flex items-center'><FaCheckCircle className="text-bleuIt mr-3 mt-1" /> Approche innovante</li>
+      <li className='flex items-center'><FaCheckCircle className="text-bleuIt mr-3 mt-1" /> Expertise locale et internationale</li>
+    </ul>
+  </div>
+
+  {/* Bloc 4 */}
+  <div className="bg-grisFond p-6 rounded-xl shadow hover:shadow-lg transition-shadow">
+    <h3 className="text-xl font-semibold text-bleuIt mb-2">Collecte et Analyse de Données</h3>
+    <p className="text-gray-700 mb-4">
+      Acquisition, traitement et interprétation de données spatiales et tabulaires pour des analyses approfondies.
+    </p>
+    <ul className="text-sm space-y-2 text-gray-600">
+      <li className='flex items-center'><FaCheckCircle className="text-bleuIt mr-3 mt-1" /> Solutions personnalisées</li>
+      <li className='flex items-center'><FaCheckCircle className="text-bleuIt mr-3 mt-1" /> Approche innovante</li>
+      <li className='flex items-center'><FaCheckCircle className="text-bleuIt mr-3 mt-1" /> Expertise locale et internationale</li>
+    </ul>
+  </div>
+  <div className="mt-8 flex justify-start">
+          <Link
+            to="/about"
+            className="relative inline-block px-6 py-2 font-medium text-white bg-itdc rounded group transition-all duration-300"
+          >
+            <span
+              className="absolute inset-0 rounded outline outline-2 outline-bleuIt opacity-0 group-hover:opacity-100 group-hover:outline-offset-4 transition-all duration-300 ease-out pointer-events-none"
+            ></span>
+            <span className="relative z-10">Consulter nos services</span>
+          </Link>
+        </div>
+</div>
+
+          
+      </section>
+      <section>
+        {/* SECTION Footer */}
+      </section>
+      
     </div>
   );
 }
