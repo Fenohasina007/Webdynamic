@@ -9,7 +9,7 @@ export class SiteDataController {
       const nomSite = req.params.nomSite; // Obligatoire via URL
       const nomPage = req.query.nomPage as string | undefined; // Optionnel via query string
       if (!nomSite) {
-        res.status(400).json({ message: 'Le nom du site est requis' });
+        res.status(400).json({ message: 'Le nom du site est requis avec succe' });
         return;
       }
       const siteData = await siteDataService.getSiteDataByName(nomSite, nomPage);
