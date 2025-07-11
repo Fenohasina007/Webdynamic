@@ -1,6 +1,7 @@
-import React from "react";
-import { Box, Heading, SimpleGrid, Stack, Image, Text, Flex } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { Box, Heading, Stack, Image, Text, Flex } from "@chakra-ui/react";
+import { FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { SiMastodon } from 'react-icons/si';
 
 const equipe = [
 	{
@@ -23,96 +24,111 @@ const equipe = [
 	},
 ];
 
-const MotionBox = motion(Box);
+export default function EquipeSection({ hideTitleAndText = false }) {
+	const [index, setIndex] = useState(0);
+	useEffect(() => {
+		const timer = setInterval(() => {
+			setIndex((prev) => (prev + 1) % equipe.length);
+		}, 5000);
+		return () => clearInterval(timer);
+	}, []);
 
-export default function EquipeSection() {
+	const prevIdx = (index - 1 + equipe.length) % equipe.length;
+	const nextIdx = (index + 1) % equipe.length;
+
 	return (
 		<Box
 			as="section"
 			id="equipe"
-			minH="100vh"
-			py={100}
+			minH="60vh"
+			py={10}
 			px={4}
 		>
-			<Heading
-				as="h2"
-				size="lg"
-				mb={6}
-				color="primary.700"
-				textAlign="center"
-			>
-				L'équipe AGM
-			</Heading>
-			<Text
-				mb={8}
-				color="primary.700"
-				fontSize={{ base: "md", md: "lg" }}
-				textAlign="center"
-			>
-				L'Association Géomatique Malagasy a pour mission de promouvoir la
-				géomatique à Madagascar, de former les professionnels et d'accompagner
-				les projets innovants dans ce domaine.
-				<br />
-				<br />
-				Nous réunissons des passionnés, étudiants, enseignants et experts pour
-				partager les connaissances et développer des outils adaptés aux besoins
-				locaux.
-			</Text>
-			<SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
-				{equipe.map((membre, i) => (
-					<MotionBox
-						key={i}
-						bg="white"
-						borderRadius="xl"
-						boxShadow="0 4px 24px rgba(33,150,243,0.10)"
-						borderWidth={0}
-						borderColor="transparent"
-						p={6}
-						display="flex"
-						flexDirection="column"
-						alignItems="center"
-						initial={{ opacity: 0, y: 30 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, amount: 0.3 }}
-						transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
-						whileHover={{
-							scale: 1.04,
-							boxShadow: "0 8px 32px rgba(33,150,243,0.18)",
-						}}
-						cursor="pointer"
-					>
-						<Image
-							src={membre.image}
-							alt={membre.nom}
-							boxSize="110px"
-							objectFit="cover"
-							borderRadius="full"
-							border="3px solid"
-							borderColor="primary.400"
-							mb={4}
-						/>
-						<Stack spacing={1} textAlign="center">
-							<Text
-								fontWeight="bold"
-								fontSize="lg"
-								color="primary.700"
-							>
-								{membre.nom}
-							</Text>
-							<Text
-								fontWeight="semibold"
-								color="primary.500"
-								fontSize="sm"
-							>
-								{membre.poste}
-							</Text>
-							{membre.description && (
-								<Text color="gray.500">{membre.description}</Text>
-							)}
-						</Stack>
-					</MotionBox>
-				))}
-			</SimpleGrid>
+			<Flex justify="center" align="center" position="relative" minH="320px" gap={4}>
+				{/* Image précédente (floue, petite) */}
+				<Box
+					flexShrink={0}
+					opacity={0.5}
+					filter="blur(3px)"
+					transform="scale(0.8)"
+					transition="all 0.6s cubic-bezier(.4,2,.6,1)"
+					zIndex={1}
+				>
+					<Image
+						src={equipe[prevIdx].image}
+						alt={equipe[prevIdx].nom}
+						boxSize="100px"
+						objectFit="cover"
+						borderRadius="full"
+						border="2px solid #1976d2"
+						mb={2}
+					/>
+				</Box>
+				{/* Image centrale (en avant) */}
+				<Box
+					flexShrink={0}
+					boxShadow="0 8px 32px rgba(33,150,243,0.18)"
+					borderRadius="2xl"
+					bg="white"
+					p={6}
+					zIndex={2}
+					transition="all 0.6s cubic-bezier(.4,2,.6,1)"
+				>
+					<Image
+						src={equipe[index].image}
+						alt={equipe[index].nom}
+						boxSize="120px"
+						objectFit="cover"
+						borderRadius="full"
+						border="3px solid #1976d2"
+						mb={4}
+					/>
+					<Stack spacing={1} textAlign="center">
+						<Text fontWeight="bold" fontSize="lg" color="primary.700">
+							{equipe[index].nom}
+						</Text>
+						<Text fontWeight="semibold" color="#1976d2" fontSize="sm">
+							{equipe[index].poste}
+						</Text>
+						{equipe[index].description && (
+							<Text color="gray.500">{equipe[index].description}</Text>
+						)}
+						<Flex justify="center" gap={3} mt={3}>
+							<a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+								<FaFacebook size={22} color="#1976d2" style={{ cursor: 'pointer' }} />
+							</a>
+							<a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<FaLinkedin size={22} color="#1976d2" style={{ cursor: 'pointer' }} />
+							</a>
+							<a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+								<FaGithub size={22} color="#1976d2" style={{ cursor: 'pointer' }} />
+							</a>
+							<a href="#" target="_blank" rel="noopener noreferrer" aria-label="Mastodon">
+								<SiMastodon size={22} color="#1976d2" style={{ cursor: 'pointer' }} />
+							</a>
+						</Flex>
+					</Stack>
+				</Box>
+				{/* Image suivante (floue, petite) */}
+				<Box
+					flexShrink={0}
+					opacity={0.5}
+					filter="blur(3px)"
+					transform="scale(0.8)"
+					transition="all 0.6s cubic-bezier(.4,2,.6,1)"
+					zIndex={1}
+				>
+					<Image
+						src={equipe[nextIdx].image}
+						alt={equipe[nextIdx].nom}
+						boxSize="100px"
+						objectFit="cover"
+						borderRadius="full"
+						border="2px solid #1976d2"
+						mb={2}
+					/>
+				</Box>
+			</Flex>
 		</Box>
 	);
 }

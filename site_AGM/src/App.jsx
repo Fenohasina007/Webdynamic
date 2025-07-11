@@ -8,18 +8,21 @@ import Formations from "./pages/Formations";
 import Actualites from "./pages/Actualites";
 import Contact from "./pages/Contact";
 import BlueGlowBar from "./components/BlueGlowBar";
-
 import { Box, Flex, Image } from "@chakra-ui/react";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./components/ScrollToTop"; 
+import agmImage from './assets/images/AGM.jpg';
+import sary from "./assets/images/sary/AGM_sary.jpg"; // Importer l'image AGM_sary.jpg
+import './hide-scrollbar.css';
+import BackToTopButton from "./components/BackToTopButton";
 
 function App() {
   return (
     <Flex direction="column" minH="100vh">
       <Box display="flex" alignItems="center" mb={2}>
-        {/* Logo AGM à gauche avec texte circulaire animé autour */}
-        <Box position="relative" w="110px" h="110px" mr={6} minW="110px">
+        {/* Logo AGM visible seulement sur desktop */}
+        <Box position="relative" w="110px" h="110px" mr={6} minW="110px" display={{ base: "none", md: "flex" }}>
           <Image
-            src={require("./assets/images/AGM.jpg")}
+            src={agmImage}
             alt="AGM"
             boxSize="92px"
             borderRadius="full"
@@ -78,6 +81,7 @@ function App() {
         </Routes>
       </Box>
       <BlueGlowBar />
+      <BackToTopButton />
       <Footer />
     </Flex>
   );

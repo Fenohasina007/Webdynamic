@@ -8,7 +8,7 @@ import AGM_sary_3 from '../assets/images/sary/AGM_sary_3.jpg';
 const slides = [
   {
     image: AGM_sary,
-    title: "Bienvenue à l'Association Géomatique Malagasy",
+    title: "Bienvenue à l'Association Géomaticiens Malagasy",
     text: "Promouvoir la géomatique et les technologies innovantes à Madagascar. Découvrez nos formations, actualités et projets !",
     button: { label: "Découvrir l'association", href: "#formations" }
   },
@@ -25,8 +25,6 @@ const slides = [
     button: { label: "Voir les actualités", href: "/actualites" }
   }
 ];
-
-const YOUTUBE_BG = "https://www.youtube.com/embed/KpEkFjMoKsM?autoplay=1&mute=1&controls=0&loop=1&playlist=KpEkFjMoKsM&modestbranding=1&showinfo=0&rel=0";
 
 export default function HeroSlider() {
   const [index, setIndex] = useState(0);

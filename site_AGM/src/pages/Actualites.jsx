@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import atrikasaImage from '../assets/sary_ilaina/sary.jpg';
 import {
 	Container,
 	Heading,
@@ -18,6 +19,7 @@ const animatedMessages = [
 	"Innovation et partage des savoirs",
 	"Former et accompagner la communauté",
 ];
+
 
 function AnimatedText() {
 	const [index, setIndex] = useState(0);
@@ -77,6 +79,7 @@ const activitesData = [
 			"Favoriser la collaboration avec d'autres organisations, institutions et partenaires nationaux et internationaux pour renforcer l'impact de la géomatique dans le développement durable de Madagascar.",
 	},
 ];
+
 
 export default function Activites() {
 	const activites = activitesData;

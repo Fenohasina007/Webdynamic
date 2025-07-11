@@ -1,4 +1,6 @@
-**/.vscode
-**/assets
-**/node_modules
-git flo
+node_modules/
+.cache/
+.env
+.DS_Store
+*.log
+.gitignore/
