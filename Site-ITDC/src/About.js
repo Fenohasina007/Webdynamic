@@ -5,6 +5,45 @@ export default function About() {
     <>
       <Header />
 
+      {/* Intro Services */}
+      <section className="bg-bleuIt text-white pt-28 pb-12 px-6 sm:px-10 lg:px-24 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4">Brève description de notre établissement</h2>
+        <p className="max-w-4xl mx-auto text-base sm:text-lg font-light">
+          Depuis 2017, ITDC Mada accompagne les entreprises malgaches dans leur transformation digitale et dans la valorisation de leurs données environnementales grâce à des solutions sur mesure et innovantes.
+        </p>
+      </section>
+
+      {/* Notre Mission */}
+      <section className="bg-gradient-to-br from-[#f0f4ff] via-white to-[#e6f0ff] py-20 px-6 sm:px-10 lg:px-24">
+        <div className="max-w-4xl mx-auto text-center relative">
+          <div className="w-14 h-1 bg-itdc mx-auto mb-6 rounded-full shadow-sm"></div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-bleuIt mb-6 uppercase tracking-wide">
+            Notre Mission
+          </h2>
+          <blockquote className="bg-white border-l-4 border-itdc shadow-md rounded-lg p-6 sm:p-10 text-gray-800 font-light text-lg sm:text-xl italic relative">
+            <span className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-itdc text-4xl font-serif">“</span>
+            <p className="z-10 relative">
+              Accompagner durablement les entreprises de Madagascar dans leur transformation numérique et l’exploitation intelligente de leurs données environnementales.
+            </p>
+            <span className="absolute -bottom-6 right-1/2 transform translate-x-1/2 text-itdc text-4xl font-serif">”</span>
+          </blockquote>
+        </div>
+      </section>
+
+      {/* Notre Engagement */}
+      <section className="bg-white py-20 px-6 sm:px-10 lg:px-24">
+        <div className="max-w-4xl mx-auto text-center relative">
+          <div className="w-14 h-1 bg-bleuIt mx-auto mb-6 rounded-full shadow-sm"></div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-itdc mb-6 uppercase tracking-wide">
+            Notre Engagement
+          </h2>
+          <div className="bg-gray-50 border border-gray-200 rounded-lg shadow-sm px-6 sm:px-10 py-8 text-gray-700 text-base sm:text-lg font-light leading-relaxed">
+            Nous nous engageons à fournir des solutions personnalisées, innovantes et durables, parfaitement alignées avec les enjeux réels des entreprises locales. Notre objectif est de contribuer activement à un développement numérique responsable à Madagascar, avec un accompagnement de proximité et une écoute constante.
+          </div>
+        </div>
+      </section>
+
+
       {/* Section Notre Parcours */}
       <section className="bg-grisFond py-16 px-6 sm:px-10 lg:px-24 mt-24">
         <div className="max-w-5xl mx-auto">
