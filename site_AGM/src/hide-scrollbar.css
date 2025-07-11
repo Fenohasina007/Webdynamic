@@ -1,0 +1,9 @@
+/* Hide horizontal scrollbar for the whole site */
+body {
+  overflow-x: hidden;
+}
+
+/* Optionally, hide scrollbar for all elements */
+::-webkit-scrollbar {
+  display: none;
+}

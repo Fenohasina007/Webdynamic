@@ -27,20 +27,33 @@ const formations = [
 
 export default function Formations() {
 	return (
-		<Container maxW="6xl" py={10}>
+		<Container
+			maxW="6xl"
+			py={10}
+			borderRadius="xl"
+			boxShadow="lg"
+		>
 			<Stack spacing={6}>
 				<Heading
 					as="h1"
 					size="xl"
-					color="primary.700"
+					color="#1976d2"
 					textAlign="center"
+					fontWeight="bold"
+					letterSpacing="wide"
+					mb={2}
 				>
 					Formations
 				</Heading>
 				<Text
-					fontSize="lg"
+					fontSize={{ base: "md", md: "lg" }}
 					color="white"
+		
+					borderRadius="md"
+					px={4}
+					py={3}
 					textAlign="center"
+					mb={6}
 				>
 					Découvrez nos formations en géomatique, SIG, télédétection, et bien plus
 					encore. Nos programmes sont adaptés à tous les niveaux et animés par des
@@ -61,6 +74,21 @@ export default function Formations() {
 					))}
 				</SimpleGrid>
 			</Stack>
+			
+			<SimpleGrid
+				columns={{ base: 1, sm: 2, md: 4 }}
+				spacing={6}
+				mt={10}
+			>
+				{formations.map((f, idx) => (
+					<CardFormation
+						key={`copy-${idx}`}
+						titre={f.titre}
+						description={f.description}
+						delay={idx * 0.1}
+					/>
+				))}
+			</SimpleGrid>
 		</Container>
 	);
 }
