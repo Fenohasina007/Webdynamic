@@ -5,8 +5,6 @@ export default function About() {
     <>
       <Header />
 
-<<<<<<< HEAD
-=======
       {/* Intro Services */}
       <section className="bg-bleuIt text-white pt-28 pb-12 px-6 sm:px-10 lg:px-24 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">Brève description de notre établissement</h2>
@@ -45,7 +43,7 @@ export default function About() {
         </div>
       </section>
 
->>>>>>> feature/vendredi
+
       {/* Section Notre Parcours */}
       <section className="bg-grisFond py-16 px-6 sm:px-10 lg:px-24 mt-24">
         <div className="max-w-5xl mx-auto">
