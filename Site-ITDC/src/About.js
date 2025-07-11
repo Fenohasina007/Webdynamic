@@ -7,8 +7,8 @@ export default function About() {
       <Header />
 
       {/* Intro Services */}
-      <section className="bg-bleuIt text-white py-12 px-6 sm:px-10 lg:px-24 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">Nos Services d'Accompagnement Numérique</h2>
+      <section className="bg-bleuIt text-white pt-28 pb-12 px-6 sm:px-10 lg:px-24 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4">Brève description de notre établissement</h2>
         <p className="max-w-4xl mx-auto text-base sm:text-lg font-light">
           Depuis 2017, ITDC Mada accompagne les entreprises malgaches dans leur transformation digitale et dans la valorisation de leurs données environnementales grâce à des solutions sur mesure et innovantes.
         </p>
