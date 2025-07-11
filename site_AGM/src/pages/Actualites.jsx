@@ -10,7 +10,7 @@ import {
 	Icon,
 } from "@chakra-ui/react";
 import { FaBookOpen, FaBook, FaUsers, FaGlobe } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
 
@@ -19,7 +19,6 @@ const animatedMessages = [
 	"Innovation et partage des savoirs",
 	"Former et accompagner la communauté",
 ];
-
 
 function AnimatedText() {
 	const [index, setIndex] = useState(0);
@@ -80,7 +79,6 @@ const activitesData = [
 	},
 ];
 
-
 export default function Activites() {
 	const activites = activitesData;
 
@@ -97,43 +95,35 @@ export default function Activites() {
 					textAlign="center"
 					mb={10}
 				>
-					Découvrez les principales activités de l'Association des Géomaticiens
-					Malagasy (AGM).
+					Découvrez les principales activités de l'Association des Géomaticiens Malagasy (AGM).
 				</Text>
 				<SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8}>
 					{activites.map((a, i) => (
 						<MotionBox
-							key={a.titre}
+							initial={{ opacity: 0, scale: 0.9 }}
+							whileInView={{ opacity: 1, scale: 1 }}
+							viewport={{ once: true, amount: 0.3 }}
+							transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
 							bg="white"
-							borderRadius="xl"
-							boxShadow="md"
+							boxShadow="2xl"
+							borderRadius="2xl"
 							p={7}
 							textAlign="center"
-							transition="all 0.2s"
-							borderWidth="2px"
-							borderColor="transparent"
-							position="relative"
+							border="1px solid #e2e8f0"
+							whileHover={{
+								scale: 1.04,
+								y: -8,
+								transition: { duration: 0.3, ease: "easeOut" }
+							}}
+							style={{ cursor: "pointer", transition: "all 0.25s" }}
 						>
 							<Icon as={a.icon} w={12} h={12} color="primary.500" mb={4} />
-							<Heading as="h3" size="md" color="primary.700" mb={3}>
+							<Heading as="h3" size="md" color="primary.700" fontWeight="bold" mb={3}>
 								{a.titre}
 							</Heading>
-							<Text color="gray.600">{a.description}</Text>
-							<Box
-								className="card-underline"
-								position="absolute"
-								left="50%"
-								bottom={3}
-								transform="translateX(-50%)"
-								w="60%"
-								h="4px"
-								borderRadius="full"
-								bgGradient="linear(to-r, #3dbbeb, #113f87, #3dbbeb)"
-								opacity={0}
-								transition="opacity 0.3s, box-shadow 0.3s"
-								_groupHover={{ opacity: 1, boxShadow: "0 0 16px 4px #3dbbeb" }}
-								pointerEvents="none"
-							/>
+							<Text color="gray.700" fontSize="md" mb={3}>
+								{a.description}
+							</Text>
 						</MotionBox>
 					))}
 				</SimpleGrid>

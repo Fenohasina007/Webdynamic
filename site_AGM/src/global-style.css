@@ -1,0 +1,20 @@
+body {
+  background: #f7f7f7 !important; /* blanc cassé */
+  color: #111 !important;
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+html, #root {
+  background: #f7f7f7 !important;
+  color: #111 !important;
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+* {
+  font-family: 'Times New Roman', Times, serif !important;
+  box-sizing: border-box;
+}
+
+body, html {
+  overflow-x: hidden !important;
+}

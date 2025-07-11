@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Heading, Text, Stack, SimpleGrid } from "@chakra-ui/react";
+import { Box, Heading, Text, Stack, SimpleGrid } from "@chakra-ui/react";
 import CardFormation from "../components/CardFormation";
 
 const formations = [
@@ -27,12 +27,7 @@ const formations = [
 
 export default function Formations() {
 	return (
-		<Container
-			maxW="6xl"
-			py={10}
-			borderRadius="xl"
-			boxShadow="lg"
-		>
+		<Box py={10} px={2}>
 			<Stack spacing={6}>
 				<Heading
 					as="h1"
@@ -47,13 +42,13 @@ export default function Formations() {
 				</Heading>
 				<Text
 					fontSize={{ base: "md", md: "lg" }}
-					color="white"
-		
+					color="#222"
 					borderRadius="md"
 					px={4}
 					py={3}
 					textAlign="center"
 					mb={6}
+					bg="transparent"
 				>
 					Découvrez nos formations en géomatique, SIG, télédétection, et bien plus
 					encore. Nos programmes sont adaptés à tous les niveaux et animés par des
@@ -74,21 +69,6 @@ export default function Formations() {
 					))}
 				</SimpleGrid>
 			</Stack>
-			
-			<SimpleGrid
-				columns={{ base: 1, sm: 2, md: 4 }}
-				spacing={6}
-				mt={10}
-			>
-				{formations.map((f, idx) => (
-					<CardFormation
-						key={`copy-${idx}`}
-						titre={f.titre}
-						description={f.description}
-						delay={idx * 0.1}
-					/>
-				))}
-			</SimpleGrid>
-		</Container>
+		</Box>
 	);
 }

@@ -39,8 +39,6 @@ export default function CardFormation({ titre, description, delay = 0 }) {
         whileHover={{
           scale: 1.04,
           y: -8,
-          background: "linear-gradient(135deg, #3dbbeb 60%, #90caf9 100%)",
-          boxShadow: "0 0 32px 8px #3dbbeb, 0 8px 32px rgba(33,150,243,0.18)",
           transition: { duration: 0.3, ease: "easeOut" }
         }}
         style={{ cursor: "pointer", transition: "all 0.25s" }}

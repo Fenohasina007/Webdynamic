@@ -3,6 +3,7 @@ import { Box, Flex, HStack, Link, IconButton, useDisclosure, Image } from "@chak
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link as RouterLink } from "react-router-dom";
 import agmImage from '../assets/images/AGM.jpg';
+import '../navbar-underline.css';
 
 const Links = [
   { name: "accueil", to: "/" },
@@ -19,12 +20,12 @@ const NavLink = ({ to, children, onClick, color = "white" }) => (
     to={to}
     color={color}
     fontWeight="bold"
-    fontSize="sm"
+    fontSize="md"
     textTransform="lowercase"
     px={2}
     py={1}
     className="navbar-link"
-    _hover={{ color: "#1976d2", bg: "white" }}
+    _hover={{}}
     onClick={onClick}
     textAlign="center"
     width="100%"
@@ -41,7 +42,7 @@ export default function Header() {
   return (
     <Flex justify="center" align="center" w="100%" zIndex={1200} bg="transparent">
       <Box
-        bg="#3dbbeb"
+        bg="#3dbbeb" // couleur principale du logo AGM
         borderRadius={{ base: 'md', md: 'full' }}
         px={2}
         py={1}
@@ -95,22 +96,17 @@ export default function Header() {
         {isOpen && (
           <Box
             position="fixed"
-            top="70px"
-            left="50%"
-            transform="translateX(-50%)"
-            width="95vw"
-            maxW="400px"
-            height="auto"
-            bg="white"
+            top="0"
+            left="0"
+            width="100vw"
+            height="100vh"
+            bg="#3dbbeb"
             zIndex={100}
-            pt={8}
-            pb={8}
-            px={6}
             display={{ base: "flex", md: "none" }}
             flexDirection="column"
             alignItems="center"
-            justifyContent="flex-start"
-            borderRadius="xl"
+            justifyContent="center"
+            borderRadius="0"
             boxShadow="2xl"
             transition="all 0.3s"
           >
@@ -119,19 +115,23 @@ export default function Header() {
                 key={link.name}
                 to={link.to}
                 onClick={onClose}
-                color="black"
+                color="white"
                 style={{
-                  background: 'white',
+                  background: 'transparent',
                   width: '100%',
-                  height: '50px',
-                  margin: '14px 0',
+                  height: '64px',
+                  margin: '18px 0',
                   borderRadius: '8px',
-                  padding: '16px 0',
+                  padding: '20px 0',
                   fontWeight: 700,
-                  fontSize: '1.25em',
+                  fontSize: '1.5em',
                   letterSpacing: '0.02em',
                   textAlign: 'center',
-                  boxShadow: '0 1px 6px rgba(0,0,0,0.04)'
+                  boxShadow: 'none',
+                  color: 'white',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                 }}
               >
                 {link.name}

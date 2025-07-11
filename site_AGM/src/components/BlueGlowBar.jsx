@@ -5,10 +5,10 @@ export default function BlueGlowBar() {
   return (
     <Box
       w="100%"
-          h="10px"
-          c="center"
-      bgGradient="linear(to-r, #3dbbeb, #113f87, #3dbbeb)"
-      boxShadow="0 0 32px 8px #3dbbeb, 0 0 64px 16px #113f87"
+      h="10px"
+      c="center"
+      bgGradient="linear(to-r, #3dbbeb, #1976d2, #3dbbeb)"
+      boxShadow="0 0 32px 8px #3dbbeb, 0 0 64px 16px #1976d2"
       position="fixed"
       left={0}
       bottom={0}

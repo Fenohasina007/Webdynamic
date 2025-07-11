@@ -7,13 +7,13 @@ import APropos from "./pages/APropos";
 import Formations from "./pages/Formations";
 import Actualites from "./pages/Actualites";
 import Contact from "./pages/Contact";
-import BlueGlowBar from "./components/BlueGlowBar";
 import { Box, Flex, Image } from "@chakra-ui/react";
 import ScrollToTop from "./components/ScrollToTop"; 
 import agmImage from './assets/images/AGM.jpg';
 import sary from "./assets/images/sary/AGM_sary.jpg"; // Importer l'image AGM_sary.jpg
 import './hide-scrollbar.css';
 import BackToTopButton from "./components/BackToTopButton";
+import './global-style.css';
 
 function App() {
   return (
@@ -80,7 +80,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Box>
-      <BlueGlowBar />
       <BackToTopButton />
       <Footer />
     </Flex>
