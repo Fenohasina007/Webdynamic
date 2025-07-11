@@ -159,14 +159,12 @@ function Acceuil() {
               </h2>
             </span>
           </div>
-
           <div className="relative flex w-full flex-col items-start gap-6 self-stretch">
             <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
               {CARDS.map((card) => (
                 <Link
                   key={card.title}
                   to={card.url}
-                  target="_blank"
                   className="outline-primary-600 dark:outline-primary-500 group hover:border-primary-600 dark:hover:border-primary-500 cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-gray-50 outline-offset-2 focus:outline-2 dark:border-gray-700 dark:bg-gray-800"
                 >
                   <div className="flex items-center gap-6 p-4">
@@ -205,6 +203,14 @@ function Acceuil() {
             </div>
           </div>
         </div>
+        <Link to= "" role="status" className="absolute bottom-7 left-6 flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-gray-800 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-orange-600">
+          <div>
+            <svg className="w-10 h-10 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h11m0 0-4-4m4 4-4 4m-5 3H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h3"/>
+            </svg>
+          </div>
+          <span>LOG OUT</span>
+        </Link>
       </main>
   );
 }
