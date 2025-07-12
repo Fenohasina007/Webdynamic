@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Flex, HStack, Link, IconButton, useDisclosure, Image } from "@chakra-ui/react";
+import { Box, Flex, HStack, Link, IconButton, useDisclosure } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link as RouterLink } from "react-router-dom";
-import agmImage from '../assets/images/AGM.jpg';
 import '../navbar-underline.css';
 
 const Links = [
@@ -40,32 +39,24 @@ export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Flex justify="center" align="center" w="100%" zIndex={1200} bg="transparent">
+    <Flex justify="center" align="center" w="100%" zIndex={1200} bg="transparent" py={3}>
       <Box
-        bg="#3dbbeb" // couleur principale du logo AGM
-        borderRadius={{ base: 'md', md: 'full' }}
+        bg="#1976d2"
+        borderRadius="2xl"
         px={2}
         py={1}
         display="flex"
         alignItems="center"
         justifyContent="space-between"
         boxShadow="lg"
-        width="100%"
-        maxW={{ base: '100vw', md: '700px', xl: '900px' }}
+        width="95vw"
+        maxW="1100px"
         minW={0}
         position="relative"
         mx="auto"
         transition="all 0.3s"
       >
-        <Box mr={2} minW="36px" display={{ base: isOpen ? "none" : "flex", md: "flex" }} alignItems="center">
-          <Image
-            src={agmImage}
-            alt="AGM"
-            boxSize={{ base: "32px", md: "40px", lg: "48px" }}
-            borderRadius="full"
-            display="block"
-          />
-        </Box>
+        {/* Logo supprimé */}
         {/* Espace réservé pour garder la place du logo quand il est caché en mobile */}
         {isOpen && (
           <Box mr={2} minW="36px" display={{ base: "flex", md: "none" }} />

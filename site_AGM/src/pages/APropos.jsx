@@ -73,58 +73,49 @@ export default function APropos() {
 				</Stack>
 				{/* Slide équipe à la place de l'image AGM */}
 				<EquipeSection hideTitleAndText={true} />
-			</Container>
-			{/* Objectifs en cards */}
-			<Box py={10} bg="transparent">
-				<Container maxW="6xl">
-					<Box className="section-title" textAlign="center" mb={8}>
-						<Text
-							as="span"
-							color="#1976d2"
-							fontWeight="bold"
-							fontSize="xl"
-							letterSpacing="wide"
+				{/* Objectifs en cards juste après l'équipe */}
+				<Box py={6} bg="transparent">
+					<Container maxW="6xl">
+						<Box className="section-title" textAlign="center" mb={8}>
+							<Heading as="h2" size="xl" color="#1976d2" mt={2}>
+								Notre objectifs
+							</Heading>
+						</Box>
+						<SimpleGrid
+							columns={{ base: 1, md: 3 }}
+							spacing={8}
 						>
-		
-						</Text>
-						<Heading as="h2" size="xl" color="#1976d2" mt={2}>
-							Notre objectifs
-						</Heading>
-					</Box>
-					<SimpleGrid
-						columns={{ base: 1, md: 3 }}
-						spacing={8}
-					>
-						{objectifs.map((obj) => (
-							<Box
-								key={obj.numero}
-								bg="#fff"
-								borderRadius="2xl"
-								boxShadow="lg"
-								p={8}
-								textAlign="center"
-								_hover={{
-									boxShadow: "2xl",
-									transform: "translateY(-6px) scale(1.03)",
-								}}
-								transition="all 0.3s"
-							>
-								<Text
-									fontSize="3xl"
-									color="#1976d2"
-									fontWeight="bold"
-									mb={2}
+							{objectifs.map((obj) => (
+								<Box
+									key={obj.numero}
+									bg="#fff"
+									borderRadius="2xl"
+									boxShadow="lg"
+									p={8}
+									textAlign="center"
+									_hover={{
+										boxShadow: "2xl",
+										transform: "translateY(-6px) scale(1.03)",
+									}}
+									transition="all 0.3s"
 								>
-									{obj.numero}
-								</Text>
-								<Text fontSize="lg" color="#222">
-									{obj.texte}
-								</Text>
-							</Box>
-						))}
-					</SimpleGrid>
-				</Container>
-			</Box>
+									<Text
+										fontSize="3xl"
+										color="#1976d2"
+										fontWeight="bold"
+										mb={2}
+									>
+										{obj.numero}
+									</Text>
+									<Text fontSize="lg" color="rgba(0, 0, 0, 0.85)" fontWeight="normal">
+										{obj.texte}
+									</Text>
+								</Box>
+							))}
+						</SimpleGrid>
+					</Container>
+				</Box>
+			</Container>
 		</Box>
 	);
 }

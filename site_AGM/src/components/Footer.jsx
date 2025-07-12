@@ -4,7 +4,7 @@ import { FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <Box as="footer" bg="#3dbbeb" color="white" pt={12} pb={4} mt={10} fontFamily="'Times New Roman', Times, serif">
+    <Box as="footer" bg="#1976d2" color="white" pt={12} pb={4} mt={10} fontFamily="'Times New Roman', Times, serif">
       <Box maxW="7xl" mx="auto" px={6}>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} mb={8}>
           {/* Contact */}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, Text, Stack, SimpleGrid } from "@chakra-ui/react";
+import { Box, Heading, Text, Stack, SimpleGrid, Button } from "@chakra-ui/react";
 import CardFormation from "../components/CardFormation";
 
 const formations = [
@@ -27,48 +27,74 @@ const formations = [
 
 export default function Formations() {
 	return (
-		<Box py={10} px={2}>
-			<Stack spacing={6}>
+		<Box minH="100vh" bg="#f7f7f7">
+			{/* En-tête style EMIT */}
+			<Box bg="#1976d2" py={{ base: 10, md: 16 }} px={4} textAlign="center">
 				<Heading
 					as="h1"
-					size="xl"
-					color="#1976d2"
-					textAlign="center"
-					fontWeight="bold"
+					size="2xl"
+					color="white"
+					fontWeight="extrabold"
+					mb={4}
 					letterSpacing="wide"
-					mb={2}
 				>
-					Formations
+					Nos Formations
 				</Heading>
 				<Text
-					fontSize={{ base: "md", md: "lg" }}
-					color="#222"
-					borderRadius="md"
-					px={4}
-					py={3}
-					textAlign="center"
-					mb={6}
-					bg="transparent"
+					fontSize={{ base: "lg", md: "2xl" }}
+					color="white"
+					maxW="3xl"
+					mx="auto"
 				>
 					Découvrez nos formations en géomatique, SIG, télédétection, et bien plus
 					encore. Nos programmes sont adaptés à tous les niveaux et animés par des
 					experts du secteur.
 				</Text>
-				<SimpleGrid
-					columns={{ base: 1, sm: 2, md: 4 }}
-					spacing={6}
-					mt={6}
-				>
+			</Box>
+			{/* Grille de formations */}
+			<Box maxW="7xl" mx="auto" py={12} px={4}>
+				<SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
 					{formations.map((f, idx) => (
-						<CardFormation
+						<Box
 							key={idx}
-							titre={f.titre}
-							description={f.description}
-							delay={idx * 0.1}
-						/>
+							bg="white"
+							borderRadius="2xl"
+							boxShadow="lg"
+							p={8}
+							textAlign="center"
+							transition="all 0.3s"
+							_hover={{
+								boxShadow: "2xl",
+								transform: "translateY(-6px) scale(1.03)",
+							}}
+						>
+							<Heading
+								as="h3"
+								size="md"
+								color="#1976d2"
+								fontWeight="bold"
+								mb={3}
+							>
+								{f.titre}
+							</Heading>
+							<Text color="#222" fontSize="md" mb={5}>
+								{f.description}
+							</Text>
+							<Button
+								colorScheme="blue"
+								bg="#1976d2"
+								color="white"
+								borderRadius="full"
+								px={8}
+								fontWeight="bold"
+								_hover={{ bg: "#1251a3" }}
+							>
+								En savoir plus
+							</Button>
+						</Box>
 					))}
 				</SimpleGrid>
-			</Stack>
+			</Box>
 		</Box>
 	);
 }
