@@ -78,6 +78,7 @@ function App() {
           <Route path="/formations" element={<Formations />} />
           <Route path="/actualites" element={<Actualites />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/membres" element={<React.Suspense fallback={<div>Chargement...</div>}>{React.createElement(React.lazy(() => import('./pages/Membres')))}</React.Suspense>} />
         </Routes>
       </Box>
       <BackToTopButton />

@@ -128,6 +128,7 @@ export default function Activites() {
 					))}
 				</SimpleGrid>
 			</Stack>
+			{/* Grand fond décoratif en bas de page supprimé */}
 		</Container>
 	);
 }

@@ -29,7 +29,27 @@ export default function Formations() {
 	return (
 		<Box minH="100vh" bg="#f7f7f7">
 			{/* En-tête style EMIT */}
-			<Box bg="#1976d2" py={{ base: 10, md: 16 }} px={4} textAlign="center">
+			<Box
+				bg="#1976d2"
+				py={{ base: 10, md: 16 }}
+				px={4}
+				textAlign="center"
+				position="relative"
+				overflow="hidden"
+			>
+				<Box
+					position="absolute"
+					top={0}
+					left={0}
+					w="100%"
+					h="100%"
+					zIndex={0}
+					backgroundImage={`url(${require('../assets/sary_atao_fond/FOND_dans_Formations.jpg')})`}
+					backgroundPosition="center"
+					backgroundRepeat="no-repeat"
+					backgroundSize="cover"
+					opacity={0.18}
+				/>
 				<Heading
 					as="h1"
 					size="2xl"
@@ -37,6 +57,8 @@ export default function Formations() {
 					fontWeight="extrabold"
 					mb={4}
 					letterSpacing="wide"
+					position="relative"
+					zIndex={1}
 				>
 					Nos Formations
 				</Heading>
@@ -45,6 +67,8 @@ export default function Formations() {
 					color="white"
 					maxW="3xl"
 					mx="auto"
+					position="relative"
+					zIndex={1}
 				>
 					Découvrez nos formations en géomatique, SIG, télédétection, et bien plus
 					encore. Nos programmes sont adaptés à tous les niveaux et animés par des

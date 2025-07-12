@@ -71,7 +71,7 @@ export default function HeroSlider() {
             <Text fontWeight="bold" fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }} maxW="2xl" color="white" textShadow="0 2px 8px #000, 0 0 2px #000">
               {slide.text}
             </Text>
-            <Button colorScheme="primary" size="lg" as="a" href={slide.button.href}>
+            <Button bg="white" color="#1976d2" size="lg" as="a" href={slide.button.href} fontWeight="bold" borderRadius="full" px={8} _hover={{ bg: '#e3e3e3', color: '#1251a3' }}>
               {slide.button.label}
             </Button>
           </Stack>
